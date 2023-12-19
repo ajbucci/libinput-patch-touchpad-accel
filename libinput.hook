@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = libinput
+[Action]
+Description = Use custom libinput build with modified accel profile for framework
+When = PostTransaction
+Exec = /home/aj/libinput-framework.sh

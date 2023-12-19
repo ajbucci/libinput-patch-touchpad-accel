@@ -1,0 +1,1 @@
+double\ntouchpad_accel_profile_linear[\S\s]*?return.*\n\}

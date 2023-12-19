@@ -1,0 +1,26 @@
+double
+touchpad_accel_profile_linear(struct motion_filter *filter,
+                  void *data,
+                  double speed_in, /* in device units/µs */
+                  uint64_t time)
+{
+    /* Convert to mm/s because that's something one can understand */
+    speed_in = v_us2s(speed_in) * 25.4/accel_filter->dpi;
+	
+	double factor;
+
+    if (speed_in < 38.1) 
+    {
+        factor = 0.23;
+    }
+    else if (speed_in < 127.0)
+    {
+        factor = 0.43;
+    }
+    else
+    {
+        factor = 0.65;
+    }
+    
+    return factor;
+}
